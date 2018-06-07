@@ -5,6 +5,8 @@
     <string name="speech_prompt">Say something</string>
     <string name="str_giraffe">GIRAFFE</string>
     <string name="str_wolf">WOLF</string>
+    <string name="words_button">Words</string>
+    <string name="phrases_button">Phrases</string>
     <string-array name="animal_words">
         <item>GIRAFFE</item>
         <item>WOLF</item>
@@ -12,4 +14,7 @@
         <item>WALTER</item>
         <item>BEAR</item>
     </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
