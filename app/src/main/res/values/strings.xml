@@ -5,5 +5,11 @@
     <string name="speech_prompt">Say something</string>
     <string name="str_giraffe">GIRAFFE</string>
     <string name="str_wolf">WOLF</string>
-
+    <string-array name="animal_words">
+        <item>GIRAFFE</item>
+        <item>WOLF</item>
+        <item>DRAGON</item>
+        <item>WALTER</item>
+        <item>BEAR</item>
+    </string-array>
 </resources>

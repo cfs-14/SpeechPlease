@@ -30,7 +30,7 @@
         android:fontFamily="casual"
         android:textStyle="bold"
         android:gravity="center_horizontal"
-        android:text="!"
+        android:text=":D"
         />
     <ImageView
         android:id="@+id/imageword"
@@ -42,11 +42,21 @@
         android:maxHeight="140sp"
         android:layout_centerHorizontal="true"
         android:scaleType="fitXY"
-        android:src="@drawable/micon"
+        android:src="@drawable/loading_image"
         android:background="@drawable/myimageborder"
         android:padding="2sp"
         />
+    <ImageButton
+        android:id="@+id/speaker_button"
+        android:layout_width="40sp"
+        android:layout_height="40sp"
+        android:layout_alignBottom="@id/imageword"
+        android:layout_toStartOf="@id/imageword"
+        android:layout_marginRight="14sp"
+        android:background="@drawable/speakerbutton"
+        />
     <ImageView
+        android:id="@+id/correct_icon"
         android:layout_width="50sp"
         android:layout_height="50sp"
         android:layout_marginStart="10sp"
@@ -56,6 +66,7 @@
         android:visibility="invisible"
         />
     <LinearLayout
+        android:id="@+id/mic_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -81,4 +92,14 @@
             android:textStyle="bold"
             />
     </LinearLayout>
+    <ImageButton
+        android:id="@+id/right_button"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_toRightOf="@id/mic_layout"
+        android:layout_alignTop="@id/mic_layout"
+        android:layout_marginTop="117dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/rightarrow"
+        />
 </RelativeLayout>
