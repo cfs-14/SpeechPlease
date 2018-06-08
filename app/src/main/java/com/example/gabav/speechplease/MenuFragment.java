@@ -1,5 +1,6 @@
 package com.example.gabav.speechplease;
 
+import android.graphics.drawable.AnimationDrawable;
 import android.media.Image;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -21,6 +22,8 @@ public class MenuFragment extends Fragment {
     Button wordButton;
     //Button for phrases
     Button phrasesButton;
+    //background
+    AnimationDrawable background;
 
     public void onCreate(Bundle savedInstanceState)
     {
@@ -32,6 +35,10 @@ public class MenuFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
         View v = inflater.inflate(R.layout.fragment_menu, container, false);
+
+        //workaround to have background as a gif.
+        background = (AnimationDrawable) v.getBackground();
+        background.start();
 
         imageViewLogo = (ImageView) v.findViewById(R.id.imageword);
 
