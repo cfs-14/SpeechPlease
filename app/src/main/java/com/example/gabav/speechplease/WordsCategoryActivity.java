@@ -1,16 +1,18 @@
 package com.example.gabav.speechplease;
 
+import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.FrameLayout;
 
 /**
- * Created by gabav on 07-Jun-18.
+ * Created by gabav on 08-Jun-18.
+ * This class
  */
 
-public class MenuActivity extends AppCompatActivity {
-
+public class WordsCategoryActivity extends AppCompatActivity
+{
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -32,22 +34,26 @@ public class MenuActivity extends AppCompatActivity {
         // WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         //set content view AFTER ABOVE sequence (to avoid crash)
-        setContentView(R.layout.activity_fragment);
+        setContentView(R.layout.category_words_fragment);
+
+        /*
+            Try to set margins programmatically.
+            FrameLayout fl = (FrameLayout) findViewById(R.id.fragment__container);
+            fl.getLayoutParams()
+         */
 
         //fm will manage the fragment hosted by this activity
-        FragmentManager fm = getSupportFragmentManager(); //we are using the
+        android.support.v4.app.FragmentManager fm = getSupportFragmentManager(); //we are using the
         //get the fragment at this activity's instance of frame layout.
         Fragment fragment = fm.findFragmentById(R.id.fragment_container);
         //We check if there is any fragment there, when onCreate is called.
         if(fragment == null)
         {
             //if there's not, we add one to it.
-            fragment = new MenuFragment();
+            fragment = new WordsCategoryFragment();
             fm.beginTransaction()
                     .add(R.id.fragment_container, fragment)
                     .commit();
         }
-
     }
-
 }
