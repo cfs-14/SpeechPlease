@@ -4,6 +4,7 @@ import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.FrameLayout;
 
 /**
@@ -45,14 +46,15 @@ public class WordsCategoryActivity extends AppCompatActivity
         //fm will manage the fragment hosted by this activity
         android.support.v4.app.FragmentManager fm = getSupportFragmentManager(); //we are using the
         //get the fragment at this activity's instance of frame layout.
-        Fragment fragment = fm.findFragmentById(R.id.fragment_container);
+        Log.d("WrdCatAct", ">>>ActivityLaunched!");
+        Fragment fragment = fm.findFragmentById(R.id.fragment_containero);
         //We check if there is any fragment there, when onCreate is called.
         if(fragment == null)
         {
             //if there's not, we add one to it.
             fragment = new WordsCategoryFragment();
             fm.beginTransaction()
-                    .add(R.id.fragment_container, fragment)
+                    .add(R.id.fragment_containero, fragment)
                     .commit();
         }
     }

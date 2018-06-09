@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/fragment_container"
+    android:id="@+id/fragment_containero"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="25sp"
-    android:layout_marginBottom="25sp"
+    android:layout_marginTop="5sp"
+    android:layout_marginBottom="5sp"
     >
 </FrameLayout>

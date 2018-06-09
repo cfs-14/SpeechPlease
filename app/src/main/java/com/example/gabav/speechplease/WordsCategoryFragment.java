@@ -1,13 +1,18 @@
 package com.example.gabav.speechplease;
 
 import android.os.Bundle;
+import android.os.Debug;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -18,6 +23,7 @@ public class WordsCategoryFragment extends Fragment
 {
     //will get the view on onCreateView to add top margins to the fragment? no.
     private RecyclerView mCategoryRecyclerView;
+    private CategoryAdapter mAdapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -28,23 +34,47 @@ public class WordsCategoryFragment extends Fragment
 
         mCategoryRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        //updateUI();
+        updateUI();
         return view;
+    }
+
+    private void updateUI()
+    {
+        CategoriesSingleton instanceCategories = CategoriesSingleton.get(getActivity());
+        Set<String> setCategories = instanceCategories.getCategories();
+
+        mAdapter = new CategoryAdapter(setCategories);
+        mCategoryRecyclerView.setAdapter(mAdapter);
     }
 
     private class CategoryHolder extends RecyclerView.ViewHolder
     {
+        private Button mCategoryButton;
+        private String mCategory;
+
         public CategoryHolder(LayoutInflater inflater, ViewGroup parent)
         {
             super(inflater.inflate(R.layout.list_item_category, parent, false));
+
+            mCategoryButton = (Button) itemView.findViewById(R.id.category_button);
+
+        }
+
+        public void bind(String category)
+        {
+            mCategoryButton.setText(category);
         }
     }
 
     private class CategoryAdapter extends RecyclerView.Adapter<CategoryHolder> {
         private Set<String> mCategories;
+        private List<String> listCategories;
 
         public CategoryAdapter(Set<String> categories) {
             mCategories = categories;
+            listCategories = new ArrayList<>(mCategories);
+            Log.d("ConsAdptr", "\n>Made an Adapter");
+            Log.v("ConsAdptr", "\n>Made an Adapter");
         }
 
         @Override
@@ -57,7 +87,7 @@ public class WordsCategoryFragment extends Fragment
         @Override
         public void onBindViewHolder(CategoryHolder holder, int position)
         {
-
+            holder.bind(listCategories.get(position));
         }
         @Override
         public int getItemCount()
