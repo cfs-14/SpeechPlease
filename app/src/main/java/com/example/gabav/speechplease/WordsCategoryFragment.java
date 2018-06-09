@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.Set;
+
 /**
  * Created by gabav on 08-Jun-18.
  */
@@ -30,4 +32,37 @@ public class WordsCategoryFragment extends Fragment
         return view;
     }
 
+    private class CategoryHolder extends RecyclerView.ViewHolder
+    {
+        public CategoryHolder(LayoutInflater inflater, ViewGroup parent)
+        {
+            super(inflater.inflate(R.layout.list_item_category, parent, false));
+        }
+    }
+
+    private class CategoryAdapter extends RecyclerView.Adapter<CategoryHolder> {
+        private Set<String> mCategories;
+
+        public CategoryAdapter(Set<String> categories) {
+            mCategories = categories;
+        }
+
+        @Override
+        public CategoryHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
+
+            return new CategoryHolder(layoutInflater, parent);
+        }
+
+        @Override
+        public void onBindViewHolder(CategoryHolder holder, int position)
+        {
+
+        }
+        @Override
+        public int getItemCount()
+        {
+            return mCategories.size();
+        }
+    }
 }
