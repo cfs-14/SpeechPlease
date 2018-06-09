@@ -1,7 +1,6 @@
 package com.example.gabav.speechplease;
 
 import android.os.Bundle;
-import android.os.Debug;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -40,8 +39,8 @@ public class WordsCategoryFragment extends Fragment
 
     private void updateUI()
     {
-        CategoriesSingleton instanceCategories = CategoriesSingleton.get(getActivity());
-        Set<String> setCategories = instanceCategories.getCategories();
+        WordsCategoriesSingleton instanceCategories = WordsCategoriesSingleton.get(getActivity());
+        Set<String> setCategories = instanceCategories.getWordCategories();
 
         mAdapter = new CategoryAdapter(setCategories);
         mCategoryRecyclerView.setAdapter(mAdapter);
@@ -50,7 +49,6 @@ public class WordsCategoryFragment extends Fragment
     private class CategoryHolder extends RecyclerView.ViewHolder
     {
         private Button mCategoryButton;
-        private String mCategory;
 
         public CategoryHolder(LayoutInflater inflater, ViewGroup parent)
         {
