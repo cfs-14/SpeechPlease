@@ -34,31 +34,37 @@
         />
     <Button
         android:id="@+id/btnWordsPractice"
-        android:layout_below="@id/appName"
-        android:layout_width="175sp"
-        android:layout_height="70sp"
+        android:layout_below="@id/btnWordsPractice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="5sp"
         android:layout_marginTop="35sp"
+        android:layout_marginLeft="20sp"
+        android:layout_marginRight="20sp"
         android:layout_centerHorizontal="true"
         android:text="Words"
         android:textSize="25sp"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:background="@color/colorPrimary"
+        android:background="@color/colorAccent"
         />
+    <!--android:layout_width="175sp" -->
+    <!--android:layout_height="72sp" -->
     <Button
         android:id="@+id/btnPhrasesPractice"
-        android:layout_below="@id/btnWordsPractice"
-        android:layout_width="175sp"
-        android:layout_height="72sp"
+        android:layout_below="@id/btnPhrasesPractice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="5sp"
-        android:layout_marginTop="15sp"
+        android:layout_marginTop="5sp"
+        android:layout_marginLeft="20sp"
+        android:layout_marginRight="20sp"
         android:layout_centerHorizontal="true"
         android:text="Phrases"
         android:textSize="25sp"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:background="@color/colorPrimary"
+        android:background="@color/colorAccent"
         />
 
 </RelativeLayout>

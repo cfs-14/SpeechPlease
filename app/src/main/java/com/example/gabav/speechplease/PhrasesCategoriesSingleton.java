@@ -36,7 +36,6 @@ public class PhrasesCategoriesSingleton
         //(!) get the list of phrasesCategories from somewhere?
         //_or hardcode them here? O/w they would eventually be hardcoded.
 
-
         phrasesCategories.add("Greetings");
         phrasesCategories.add("Personal");
         phrasesCategories.add("Food");

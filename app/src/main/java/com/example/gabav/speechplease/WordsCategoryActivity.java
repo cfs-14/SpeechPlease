@@ -1,11 +1,9 @@
 package com.example.gabav.speechplease;
 
-import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.widget.FrameLayout;
 
 /**
  * Created by gabav on 08-Jun-18.
@@ -35,7 +33,7 @@ public class WordsCategoryActivity extends AppCompatActivity
         // WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         //set content view AFTER ABOVE sequence (to avoid crash)
-        setContentView(R.layout.category_words_fragment);
+        setContentView(R.layout.category_list_host);
 
         /*
             Try to set margins programmatically.
@@ -47,14 +45,14 @@ public class WordsCategoryActivity extends AppCompatActivity
         android.support.v4.app.FragmentManager fm = getSupportFragmentManager(); //we are using the
         //get the fragment at this activity's instance of frame layout.
         Log.d("WrdCatAct", ">>>ActivityLaunched!");
-        Fragment fragment = fm.findFragmentById(R.id.fragment_containero);
+        Fragment fragment = fm.findFragmentById(R.id.fragment_container);
         //We check if there is any fragment there, when onCreate is called.
         if(fragment == null)
         {
             //if there's not, we add one to it.
             fragment = new WordsCategoryFragment();
             fm.beginTransaction()
-                    .add(R.id.fragment_containero, fragment)
+                    .add(R.id.fragment_container, fragment)
                     .commit();
         }
     }

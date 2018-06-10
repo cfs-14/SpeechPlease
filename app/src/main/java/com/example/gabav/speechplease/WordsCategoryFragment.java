@@ -29,7 +29,7 @@ public class WordsCategoryFragment extends Fragment
                              Bundle savedInstanceState)
     {
         View view = inflater.inflate(R.layout.fragment_category_list, container, false);
-        mCategoryRecyclerView = (RecyclerView) view.findViewById(R.id.category_words_recycler_view);
+        mCategoryRecyclerView = (RecyclerView) view.findViewById(R.id.category_recycler_view);
 
         mCategoryRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
