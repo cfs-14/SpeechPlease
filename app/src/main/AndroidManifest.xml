@@ -17,14 +17,14 @@
         <activity android:name=".MainActivity">
         </activity>
         <activity android:name=".MenuActivity">
-        </activity>
-        <activity android:name=".WordsCategoryActivity">
-        </activity>
-        <activity android:name=".PhrasesCategoryActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".WordsCategoryActivity">
+        </activity>
+        <activity android:name=".PhrasesCategoryActivity">
         </activity>
     </application>
 </manifest>
