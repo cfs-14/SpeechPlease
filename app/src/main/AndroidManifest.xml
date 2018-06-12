@@ -6,6 +6,12 @@
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
     <uses-permission android:name="android.permission.RECORD_AUDIO"/>
     <uses-permission android:name="android.permission.CAPTURE_AUDIO_OUTPUT"/>
+
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <!-- App is not indexable by Google Search Intent.ACTION_VIEW -->
     <application
         android:allowBackup="true"
@@ -16,11 +22,14 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
         </activity>
-        <activity android:name=".MenuActivity">
+        <activity android:name=".TestActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".MenuActivity">
+
         </activity>
         <activity android:name=".WordsCategoryActivity">
         </activity>
